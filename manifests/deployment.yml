@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myapponaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapponaks
+  template:
+    metadata:
+      labels:
+        app: myapponaks 
+    spec:
+      containers:
+        - name: myapponaks 
+          image: aksacr407.azurecr.io/myapponaks
+          ports:
+          - containerPort: 80

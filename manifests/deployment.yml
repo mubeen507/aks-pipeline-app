@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mubeenakspipelineapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mubeenakspipelineapp
+  template:
+    metadata:
+      labels:
+        app: mubeenakspipelineapp 
+    spec:
+      containers:
+        - name: mubeenakspipelineapp 
+          image: myaksdemoacr.azurecr.io/mubeenakspipelineapp
+          ports:
+          - containerPort: 80

@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: applicaitonimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: applicaitonimage
+  template:
+    metadata:
+      labels:
+        app: applicaitonimage 
+    spec:
+      containers:
+        - name: applicaitonimage 
+          image: akscicdcr.azurecr.io/applicaitonimage
+          ports:
+          - containerPort: 80
